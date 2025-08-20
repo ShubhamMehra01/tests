@@ -1,5 +1,5 @@
 
-const {test, expect,request} = require('@playwright/test');
+const {test} = require('@playwright/test');
 test('Demo for login',async ({browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();

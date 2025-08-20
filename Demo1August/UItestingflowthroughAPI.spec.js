@@ -1,5 +1,4 @@
 const {test, expect,request} = require('@playwright/test');
-const { TIMEOUT } = require('dns');
 const loginpayload = {userEmail: "test1@gmail.com", userPassword: "Work@12345"};
 let token;
 

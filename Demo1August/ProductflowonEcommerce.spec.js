@@ -1,5 +1,5 @@
 
-const {test, expect,request} = require('@playwright/test');
+const {test, expect} = require('@playwright/test');
 test('product purchase', async ({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -8,6 +8,7 @@ test('product purchase', async ({browser})=>{
     await page.locator('#userEmail').fill('test1@gmail.com');
     await page.locator('#userPassword').fill('Work@12345');
     await page.locator("[type='submit']").click();
+
     await expect(page.locator('.card-body').first()).toBeVisible();
     const product= page.locator('.card-body');
     const prodcount = await product.count();
