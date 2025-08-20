@@ -26,7 +26,23 @@ await dated.click();
 console.log(date);
 const Inputs = page.locator(".react-date-picker__inputGroup__input").count();
 page.waitForLoadState("networkidle");
-console.log(Inputs);
+
+async function someAsyncFunction() {
+    // Simulate async work, e.g., API call or DB fetch
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(Inputs), 1000);
+    });
+}
+
+(async () => {
+    try {
+        const result = await someAsyncFunction();
+        console.log(result); // Will log after 1 second
+    } catch (err) {
+        console.error("Error:", err);
+    }
+})();
+
 // for (let i=0; i<expectedlist.length; i++){
 // const value = await Inputs.nth(i).inputValue();
 // await expect(Inputs).toEqual(expectedlist);

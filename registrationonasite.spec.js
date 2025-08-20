@@ -1,5 +1,5 @@
 const {test, expect} = require('@playwright/test');
-const { text } = require('stream/consumers');
+//const { text } = require('stream/consumers');
 test ('Registration', async ({browser}) =>{
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -15,10 +15,10 @@ await page.locator("#firstName").fill("centric");
 await page.locator("#lastName").fill("consulting");
 await page.locator("#userEmail").fill("polope5486@discrip.com");
 await page.locator("#userMobile").fill("1234567890");
-await page.locator("[formcontrolname='occupation']").selectOption("Scientist");
+await page.locator('[formcontrolname="occupation"]').selectOption("Scientist");
 // //await expect (page.locator("[value='Male']")).isChecked();
 // //console.log (await page.locator("[value='Male']").last().isChecked());
-await expect (page.locator("[value='Male']").not.toBeChecked());
+await expect (page.locator("[value='Male']")).not.toBeChecked();
 //await expect (page.locator("[type='radio']").first()).toBeChecked();
 await page.locator("[value='Male']").click();
 console.log(await expect (page.locator("[value='Male']")).toBeChecked());
@@ -30,7 +30,6 @@ await page.locator("#login").click();
 test.only ('Window child new page', async ({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();
-    const userName= page.locator('#userName');
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     const documentLink = await page.locator('.blinkingText');
     
