@@ -1,0 +1,14 @@
+{
+  "name": "orangehrm-playwright-cucumber",
+  "version": "1.0.0",
+  "description": "OrangeHRM automation using Playwright and Cucumber",
+  "scripts": {
+    "test": "npx cucumber-js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.6.0",
+    "@playwright/test": "^1.55.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,2 @@
+import { Page } from '@playwright/test'; export class MyInfoPage { constructor(public page: Page) {} async goto() { await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewMyDetails'); 
+    await this.page.waitForLoadState('networkidle');} }

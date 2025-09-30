@@ -1,0 +1,1 @@
+import { Page, Locator } from '@playwright/test'; export class DashboardPage { readonly page: Page; readonly header: Locator; constructor(page: Page) { this.page = page; this.page.waitForLoadState('networkidle'); this.header = page.locator('h6.oxd-text'); } }
