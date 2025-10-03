@@ -1,43 +1,36 @@
-// const {test, expect,request} = require ("@playwright/test");
+const {test, expect,request} = require ("@playwright/test");
 
-// const {ok} = require("node:assert")
-// const loginpayload = {userEmail:"test1@gmail.com",userPassword:"Work@12345"};
+// const { ok } = require('assert');
+const loginpayload = {userEmail:"test@gmail.com",userPassword:"work@12345"};
 
-// let token;
-// test.beforeAll( async()=>
-//     {
-//     const Acontext= await request.newContext();
-//     const loginresponse =await Acontext.post("https://rahulshettyacademy.com/api/ecom/auth/login", 
-//     {
-//         data: loginpayload,
-//     });
+let token;
+test.beforeAll(async()=>{
+    const Acontext= await request.newContext();
+    const loginresponse = await Acontext.post("https://rahulshettyacademy.com/api/ecom/auth/login", 
+    {
+        data: loginpayload
+    })
 
-//     expect (loginresponse.ok()).toBeTruthy();
-//     const loginresponseJson =await loginresponse.json();
-//    token = loginresponseJson.token;
-//     console.log(token);
-// });
+    expect(loginresponse.ok()).toBeTruthy();
+    const loginresponseJson =await loginresponse.json();
+   token = loginresponseJson.token;
+    console.log(token);
+});
 
-// test ('Product purchase', async({browser})=>{
+//const { Console } = require("node:console");
+// test ('Product purchase', async ({browser})=>{
     
 //     const context = await browser.newContext();
 //     const page = await context.newPage();
 //     await page.addInitScript(value => {
 //         window.localStorage.setItem('token',value);
 // },token);
-// await page.goto("https://rahulshettyacademy.com/client/#/auth/login");//opening site
-// // //Login
-// await page.locator("#userEmail").fill("test@gmail.com"); 
-// await page.locator("#userPassword").fill("work@12345");
-// await page.locator("#login").click();
-// });
-// // // //product select
-// test ('placing order', async ({browser})=>{
-// const APIcontext= await browser.newContext();
-// const page = await APIcontext.newPage();
-// await page.addInitScript(value =>{
-//     window.localStorage.setItem('token',value);
-// },token);
+// //await page.goto("https://rahulshettyacademy.com/client/#/auth/login");//opening site
+// //Login
+// // await page.locator("#userEmail").fill("test@gmail.com"); 
+// // await page.locator("#userPassword").fill("work@12345");
+// // await page.locator("#login").click(); 
+// // //product select
 // await page.goto("https://rahulshettyacademy.com/client/");
 // const product = page.locator('.card-body');
 // await page.waitForLoadState('networkidle');
@@ -101,40 +94,3 @@
 // const orderdetails = await page.locator(".col-text").textContent();
 // expect(orderid.includes(orderdetails)).toBeTruthy(); 
 // });
-
-
-const {test, expect, request}= require ("@playwright/test");
-const {ok} = require ("node:assert");
-const loginpayload = {userEmail:"test1@gmail.com",userPassword:"Work@12345"}; 
-let token;
-test.beforeAll(async()=>{
-const Acontext = request.newContext();
-const loginResponse = (await Acontext).post("https://rahulshettyacademy.com/client/",
-{
- data : loginpayload,    
-});
-expect((await loginResponse).ok()).toBeTruthy();
-const loginresponseJson = (await loginResponse).json;
-token = loginresponseJson.token;
-console.log(token);
-});
-
-// test.beforeEach('API order placed', async()=>{
-
-
-
-// });
-test('order Placed', async({browser})=>{
-    const context = await browser.newContext();
-    const page = await context.newPage(); 
-    await page.addInitScript(value=>{
-    window.localStorage.setItem('token', value);
-    },token)
-//await page.goto("https://rahulshettyacademy.com/client/");//opening site
-// await page.waitForLoadState("networkidle");
-// await page.locator('#userEmail').fill('test1@gmail.com'); 
-// await page.locator('#userPassword').fill('Work@12345');
-// await page.locator('#login').click(); 
-
-});
-

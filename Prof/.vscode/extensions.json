@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-playwright.playwright",     // Playwright support (test runner, snippets)
+    "esbenp.prettier-vscode",       // Code formatting
+    "dbaeumer.vscode-eslint",       // JavaScript/TypeScript linting
+    "ms-vscode.vscode-typescript-tslint-plugin", // TypeScript linting
+    "eamodio.gitlens",              // Git insights and history
+    "github.vscode-pull-request-github", // GitHub PR support
+    "streetsidesoftware.code-spell-checker", // Optional: spell check
+    "ms-vscode.vscode-node-azure-pack", // Node.js support if needed
+    "ms-azuretools.vscode-docker"    // Optional: Docker support if framework uses containers
+  ]
+}

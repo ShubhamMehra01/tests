@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "@playwright/test"
+    ],
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "include": [
+    "smartPW/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

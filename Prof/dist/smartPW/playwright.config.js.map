@@ -1,0 +1,1 @@
+{"version":3,"file":"playwright.config.js","sourceRoot":"","sources":["../../smartPW/playwright.config.ts"],"names":[],"mappings":";;AAAA,2CAAgD;AAEhD,kBAAe,IAAA,mBAAY,EAAC;IAC1B,GAAG,EAAE;QACH,OAAO,EAAE,2CAA2C;QACpD,QAAQ,EAAE,IAAI;QACd,UAAU,EAAE,iBAAiB;QAC7B,KAAK,EAAE,mBAAmB;KAC3B;CACF,CAAC,CAAA"}

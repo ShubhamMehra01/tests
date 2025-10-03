@@ -82,8 +82,8 @@ test('DatePicker', async ({browser})=>{
     const date = 18;    
     const year = 2029;
 
-   const expectedlist = [{month}/{date}/{year}];
-   await page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+    const expectedlist = [month/date/year];
+    await page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers");
    await page.waitForLoadState('networkidle');
    const calendar = page.locator('.react-date-picker__inputGroup__day');
    await calendar.waitFor();
@@ -98,5 +98,5 @@ test('DatePicker', async ({browser})=>{
    const dated = page.locator('.react-calendar__month-view__days__day').nth(Number(date));
    await dated.click();
    await page.waitForLoadState('networkidle');
-   console.log(expectedlist);
-})
+   console.log(date);
+});
